@@ -1,0 +1,158 @@
+pdf1:
+  autoredeploy: true
+  environment:
+    - 'VIRTUAL_HOST=http://pdf.local'
+    - WEAVER_ATHENA_CMD=athenapdf -S --no-portrait -M none
+    - WEAVER_AUTH_KEY=key
+    - WEAVER_CONVERSION_FALLBACK=false
+    - WEAVER_MAX_CONVERSION_QUEUE=50
+    - WEAVER_MAX_WORKERS=10
+    - WEAVER_WORKER_TIMEOUT=90
+  image: 'arachnysdocker/athenapdf-service:latest'
+  restart: always
+  target_num_containers: 6
+  mem_limit: 192m
+  tags:
+    - pdf
+
+pdf2:
+  autoredeploy: true
+  environment:
+    - 'VIRTUAL_HOST=http://pdf.local'
+    - WEAVER_ATHENA_CMD=athenapdf -S --no-portrait -M none
+    - WEAVER_AUTH_KEY=key
+    - WEAVER_CONVERSION_FALLBACK=false
+    - WEAVER_MAX_CONVERSION_QUEUE=50
+    - WEAVER_MAX_WORKERS=10
+    - WEAVER_WORKER_TIMEOUT=90
+  image: 'arachnysdocker/athenapdf-service:latest'
+  restart: always
+  target_num_containers: 6
+  mem_limit: 192m
+
+  tags:
+    - pdf
+
+pdf3:
+  autoredeploy: true
+  environment:
+    - 'VIRTUAL_HOST=http://pdf.local'
+    - WEAVER_ATHENA_CMD=athenapdf -S --no-portrait -M none
+    - WEAVER_AUTH_KEY=key
+    - WEAVER_CONVERSION_FALLBACK=false
+    - WEAVER_MAX_CONVERSION_QUEUE=50
+    - WEAVER_MAX_WORKERS=10
+    - WEAVER_WORKER_TIMEOUT=90
+  image: 'arachnysdocker/athenapdf-service:latest'
+  restart: always
+  target_num_containers: 6
+  mem_limit: 192m
+
+  tags:
+    - pdf
+
+pdf4:
+  autoredeploy: true
+  environment:
+    - 'VIRTUAL_HOST=http://pdf.local'
+    - WEAVER_ATHENA_CMD=athenapdf -S --no-portrait -M none
+    - WEAVER_AUTH_KEY=key
+    - WEAVER_CONVERSION_FALLBACK=false
+    - WEAVER_MAX_CONVERSION_QUEUE=50
+    - WEAVER_MAX_WORKERS=10
+    - WEAVER_WORKER_TIMEOUT=90
+  image: 'arachnysdocker/athenapdf-service:latest'
+  restart: always
+  target_num_containers: 6
+  mem_limit: 192m
+
+  tags:
+    - pdf
+
+pdf5:
+  autoredeploy: true
+  environment:
+    - 'VIRTUAL_HOST=http://pdf.local'
+    - WEAVER_ATHENA_CMD=athenapdf -S --no-portrait -M none
+    - WEAVER_AUTH_KEY=key
+    - WEAVER_CONVERSION_FALLBACK=false
+    - WEAVER_MAX_CONVERSION_QUEUE=50
+    - WEAVER_MAX_WORKERS=10
+    - WEAVER_WORKER_TIMEOUT=90
+  image: 'arachnysdocker/athenapdf-service:latest'
+  restart: always
+  target_num_containers: 6
+  mem_limit: 192m
+
+  tags:
+    - pdf
+
+pdf6:
+  autoredeploy: true
+  environment:
+    - 'VIRTUAL_HOST=http://pdf.local'
+    - WEAVER_ATHENA_CMD=athenapdf -S --no-portrait -M none
+    - WEAVER_AUTH_KEY=key
+    - WEAVER_CONVERSION_FALLBACK=false
+    - WEAVER_MAX_CONVERSION_QUEUE=50
+    - WEAVER_MAX_WORKERS=10
+    - WEAVER_WORKER_TIMEOUT=90
+  image: 'arachnysdocker/athenapdf-service:latest'
+  restart: always
+  target_num_containers: 6
+  mem_limit: 192m
+
+  tags:
+    - pdf
+
+pdf7:
+  autoredeploy: true
+  environment:
+    - 'VIRTUAL_HOST=http://pdf.local'
+    - WEAVER_ATHENA_CMD=athenapdf -S --no-portrait -M none
+    - WEAVER_AUTH_KEY=key
+    - WEAVER_CONVERSION_FALLBACK=false
+    - WEAVER_MAX_CONVERSION_QUEUE=50
+    - WEAVER_MAX_WORKERS=10
+    - WEAVER_WORKER_TIMEOUT=90
+  image: 'arachnysdocker/athenapdf-service:latest'
+  restart: always
+  target_num_containers: 6
+  mem_limit: 192m
+
+  tags:
+    - pdf
+
+pdf8:
+  autoredeploy: true
+  environment:
+    - 'VIRTUAL_HOST=http://pdf.local'
+    - WEAVER_ATHENA_CMD=athenapdf -S --no-portrait -M none
+    - WEAVER_AUTH_KEY=key
+    - WEAVER_CONVERSION_FALLBACK=false
+    - WEAVER_MAX_CONVERSION_QUEUE=50
+    - WEAVER_MAX_WORKERS=10
+    - WEAVER_WORKER_TIMEOUT=90
+  image: 'arachnysdocker/athenapdf-service:latest'
+  restart: always
+  target_num_containers: 6
+  mem_limit: 192m
+  tags:
+    - pdf
+
+proxy:
+  image: 'dockercloud/haproxy:latest'
+  mem_limit: 192m
+  links:
+    - pdf1
+    - pdf2
+    - pdf3
+    - pdf4
+    - pdf5
+    - pdf6
+    - pdf7
+    - pdf8
+  ports:
+    - '80:80'
+  tags:
+    - pdf

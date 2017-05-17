@@ -1,0 +1,13 @@
+pdf:
+  environment:
+    - WEAVER_ATHENA_CMD=athenapdf -S --no-portrait -M none
+    - WEAVER_AUTH_KEY=key
+    - WEAVER_CONVERSION_FALLBACK=false
+    - WEAVER_MAX_CONVERSION_QUEUE=50
+    - WEAVER_MAX_WORKERS=1
+    - WEAVER_WORKER_TIMEOUT=120
+  image: 'arachnysdocker/athenapdf-service:latest'
+  restart: always
+  mem_limit: 192m
+  ports:
+    - '8080:8080'

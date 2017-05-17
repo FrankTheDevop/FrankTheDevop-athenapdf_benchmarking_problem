@@ -1,0 +1,13 @@
+{
+  "name": "benchmarking",
+  "version": "1.0.0",
+  "main": "benchmak_curl.js",
+  "scripts": {
+    "start": "nps"
+  },
+  "license": "UNLICENSED",
+  "description": "benchmarking",
+  "dependencies": {
+    "system-sleep": "^1.3.5"
+  }
+}
